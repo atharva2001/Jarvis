@@ -50,10 +50,14 @@ def record_audio(ask=False):
         try:
             voice_data = r.recognize_google(audio)
             print(voice_data)
+
         except sr.UnknownValueError:
-            jarvis_speak(random.choice(choices))
+            pass
+            #jarvis_speak(random.choice(choices))
+            
         except sr.RequestError as e:
             jarvis_speak(random.choice(choices))
+
         voice_data2 = voice_data.lower()
         return voice_data2
 
